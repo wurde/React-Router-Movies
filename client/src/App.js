@@ -5,6 +5,7 @@
  */
 
 const React = require('react')
+const react_router_dom = require('react-router-dom')
 const components = require('./components/index')
 
 /**
@@ -12,6 +13,8 @@ const components = require('./components/index')
  */
 
 const Component = React.Component
+const BrowserRouter = react_router_dom.BrowserRouter
+const Route = react_router_dom.Route
 
 /**
  * Import component styles
@@ -39,10 +42,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <components.SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
-      </div>
+
+        <Route path="/" component={components.MovieList} />
+        <Route path="/movies/:id" component={components.Movie} />
+      </BrowserRouter>
     )
   }
 }
