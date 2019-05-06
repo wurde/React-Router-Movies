@@ -63,7 +63,7 @@ class Movie extends Component {
       <div className="save-wrapper">
         <MovieCard title={title} director={director} metascore={metascore} stars={stars} />
 
-        <div className="save-button">Save</div>
+        <div className="save-button" onClick={this.props.addToSavedList}>Save</div>
       </div>
     )
   }

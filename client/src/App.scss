@@ -63,10 +63,14 @@
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  cursor: pointer;
 }
 .save-button:hover {
   background-color: green;
   color: white;
+}
+.save-button:active {
+  background-color: rgb(28, 102, 42);
 }
 
 .home-button {
