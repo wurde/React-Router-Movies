@@ -1,8 +1,24 @@
-import React, { Component } from 'react';
+'use strict'
 
-export default class SavedList extends Component {
+/**
+ * Dependencies
+ */
+
+const React = require('react')
+
+/**
+ * Constants
+ */
+
+const Component = React.Component
+
+/**
+ * Define component
+ */
+
+class SavedList extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -14,6 +30,12 @@ export default class SavedList extends Component {
         ))}
         <div className="home-button">Home</div>
       </div>
-    );
+    )
   }
 }
+
+/**
+ * Export component
+ */
+
+module.exports = SavedList

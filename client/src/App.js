@@ -1,29 +1,54 @@
-import React, { Component } from 'react';
+'use strict'
 
-import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList';
-import Movie from './Movies/Movie';
+/**
+ * Dependencies
+ */
 
-export default class App extends Component {
+const React = require('react')
+const components = require('./components/index')
+
+/**
+ * Constants
+ */
+
+const Component = React.Component
+
+/**
+ * Import component styles
+ */
+
+require('./App.scss')
+
+/**
+ * Define component
+ */
+
+class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       savedList: []
-    };
+    }
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
-  };
+    const savedList = this.state.savedList
+    savedList.push(movie)
+    this.setState({ savedList })
+  }
 
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <components.SavedList list={this.state.savedList} />
         <div>Replace this Div with your Routes</div>
       </div>
-    );
+    )
   }
 }
+
+/**
+ * Export component
+ */
+
+module.exports = App
