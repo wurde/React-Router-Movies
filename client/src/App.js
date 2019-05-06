@@ -45,7 +45,7 @@ class App extends Component {
       <BrowserRouter>
         <components.SavedList list={this.state.savedList} />
 
-        <Route path="/" component={components.MovieList} />
+        <Route exact path="/" component={components.MovieList} />
         <Route path="/movies/:id" component={components.Movie} />
       </BrowserRouter>
     )
