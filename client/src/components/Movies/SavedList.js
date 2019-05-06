@@ -5,12 +5,14 @@
  */
 
 const React = require('react')
+const react_router_dom = require('react-router-dom')
 
 /**
  * Constants
  */
 
 const Component = React.Component
+const Link = react_router_dom.Link
 
 /**
  * Define component
@@ -28,7 +30,8 @@ class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <div className="home-button">Home</div>
+
+        <Link className="home-button" to="/">Home</Link>
       </div>
     )
   }
