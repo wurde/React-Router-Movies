@@ -28,7 +28,12 @@ class SavedList extends Component {
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {this.props.list.map((movie, i) => (
-          <span key={i} className="saved-movie">{movie.title}</span>
+          <div key={i} className="jsx-savedMovie">
+            <Link to={`/movies/${movie.id}`}>
+              <span key={i} className="saved-movie">{movie.title}</span>
+            </Link>
+            <span onClick={() => this.props.removeFromSavedList(movie)}>x</span>
+          </div>
         ))}
 
         <Link className="home-button" to="/">Home</Link>

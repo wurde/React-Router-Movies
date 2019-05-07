@@ -42,11 +42,23 @@ class App extends Component {
     this.setState({ savedList })
   }
 
+  removeFromSavedList = movie => {
+    const savedList = this.state.savedList
+    const newList = savedList.filter(m => m.id !== movie.id)
+    this.setState({ savedList: newList })
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <Route exact path="/" render={(props) => <HomePage {...props} savedList={this.state.savedList} />} />
-        <Route path="/movies/:id" render={(props) => <MoviePage {...props} savedList={this.state.savedList} addToSavedList={this.addToSavedList} />} />
+        <Route exact path="/" render={(props) =>
+          <HomePage {...props} savedList={this.state.savedList}
+                               removeFromSavedList={this.removeFromSavedList} />} />
+
+        <Route path="/movies/:id" render={(props) =>
+          <MoviePage {...props} savedList={this.state.savedList}
+                                addToSavedList={this.addToSavedList}
+                                removeFromSavedList={this.removeFromSavedList} />} />
       </BrowserRouter>
     )
   }

@@ -21,7 +21,7 @@ const SavedList = shared.SavedList
 function MoviePage(props) {
   return (
     <div className="jsx-MoviePage">
-      <SavedList list={props.savedList} />
+      <SavedList list={props.savedList} removeFromSavedList={props.removeFromSavedList} />
 
       <Movie {...props} savedList={props.savedList} addToSavedList={props.addToSavedList} />
     </div>

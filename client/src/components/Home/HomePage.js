@@ -9,13 +9,19 @@ const shared = require('../shared/index')
 const MovieList = require('../Movie/MovieList')
 
 /**
+ * Constants
+ */
+
+const SavedList = shared.SavedList
+
+/**
  * Define component
  */
 
 function HomePage(props) {
   return (
     <div className="jsx-HomePage">
-      <shared.SavedList list={props.savedList} />
+      <SavedList list={props.savedList} removeFromSavedList={props.removeFromSavedList} />
 
       <MovieList />
     </div>
