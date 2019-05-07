@@ -13,6 +13,7 @@ const react_router_dom = require('react-router-dom')
 
 const Component = React.Component
 const Link = react_router_dom.Link
+const NavLink = react_router_dom.NavLink
 
 /**
  * Define component
@@ -29,9 +30,9 @@ class SavedList extends Component {
         <h3>Saved Movies:</h3>
         {this.props.list.map((movie, i) => (
           <div key={i} className="jsx-savedMovie">
-            <Link to={`/movies/${movie.id}`}>
+            <NavLink to={`/movies/${movie.id}`} activeClassName="saved-active">
               <span key={i} className="saved-movie">{movie.title}</span>
-            </Link>
+            </NavLink>
             <span onClick={() => this.props.removeFromSavedList(movie)}>x</span>
           </div>
         ))}
