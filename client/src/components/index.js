@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-  Movie: require('./Movies/Movie'),
-  MovieList: require('./Movies/MovieList'),
-  SavedList: require('./Movies/SavedList'),
+  HomePage: require('./Home/HomePage'),
+  MoviePage: require('./Movie/MoviePage'),
 }

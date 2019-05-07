@@ -15,6 +15,8 @@ const components = require('./components/index')
 const Component = React.Component
 const BrowserRouter = react_router_dom.BrowserRouter
 const Route = react_router_dom.Route
+const HomePage = components.HomePage
+const MoviePage = components.MoviePage
 
 /**
  * Import component styles
@@ -43,10 +45,8 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <components.SavedList list={this.state.savedList} />
-
-        <Route exact path="/" component={components.MovieList} />
-        <Route path="/movies/:id" render={(props) => <components.Movie {...props} addToSavedList={this.addToSavedList} />} />
+        <Route exact path="/" render={(props) => <HomePage {...props} savedList={this.state.savedList} />} />
+        <Route path="/movies/:id" render={(props) => <MoviePage {...props} savedList={this.state.savedList} addToSavedList={this.addToSavedList} />} />
       </BrowserRouter>
     )
   }
